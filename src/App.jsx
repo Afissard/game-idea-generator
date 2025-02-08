@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { Container, Typography, Button, Paper } from "@mui/material";
 import styles from "./styles"; // Import dark theme styles
-import { generate_ideas } from "./generator.js"; // Import the generateIdeas function
+import {GenerateIdeas} from "./generator.js"; // Import the generateIdeas function
 
 export default function App() {
     const [generatedIdea, setGeneratedIdea] = useState("");
+    const generator = new GenerateIdeas();
 
     const generateIdea = () => {
-        setGeneratedIdea(generate_ideas.generate());
+        setGeneratedIdea(generator.idea);
     };
 
     return (
